@@ -76,19 +76,3 @@ if data:
 
 else:
     st.info("データがまだありません。")
-# データの取得
-response = supabase.table("expense_logs").select("*").order("date", desc=True).execute()
-data = response.data
-
-if data:
-    df = pd.DataFrame(data)
-    
-    # 合計金額の表示
-    total_amount = df["amount"].sum()
-    st.metric("合計金額", f"{total_amount:,} 円")
-    
-    # テーブル表示（不要なIDなどは除外）
-    display_df = df[["date", "category", "item_name", "amount"]]
-    st.dataframe(display_df, use_container_width=True)
-else:
-    st.info("データがまだありません。")
