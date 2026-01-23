@@ -7,7 +7,7 @@ url: str = st.secrets["SUPABASE_URL"]
 key: str = st.secrets["SUPABASE_KEY"]
 supabase: Client = create_client(url, key)
 
-st.title("💰 簡易経費メモアプリ")
+st.title("💰 簡易家計簿アプリ")
 
 # --- 入力フォーム ---
 with st.form("expense_form", clear_on_submit=True):
