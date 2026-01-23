@@ -36,8 +36,6 @@ with st.form("expense_form", clear_on_submit=True):
         else:
             st.error("項目名と金額を入力してください。")
 
----
-
 # --- 履歴の表示 ---
 st.subheader("📊 経費の履歴")
 
